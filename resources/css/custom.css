@@ -1,0 +1,237 @@
+/* ============================================================
+   BASE STYLES & ANIMATIONS
+============================================================ */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   INTERACTIVE ELEMENT CURSORS
+============================================================ */
+
+button:not(:disabled),
+[role="button"]:not(:disabled),
+a {
+    cursor: pointer;
+}
+
+/* Active nav link */
+.nav-link.active {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-600);
+}
+.dark .nav-link.active {
+    background-color: color-mix(in srgb, var(--color-primary-500) 15%, transparent);
+    color: var(--color-primary-400);
+}
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   HERO GRADIENT BACKGROUND
+============================================================ */
+
+.hero-gradient {
+    background-image:
+        radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-primary-500) 12%, transparent), transparent 50%),
+        linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+.dark .hero-gradient {
+    background-image:
+        radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-primary-400) 18%, transparent), transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* ============================================================
+   SKILL PROGRESS BARS
+============================================================ */
+
+.skill-bar {
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   education and work thumb pointer
+============================================================ */
+.qual-tab {
+    cursor: pointer;
+}
+
+/* ============================================================
+   TESTIMONIALS MARQUEE
+============================================================ */
+
+.testimonial-track {
+    animation: testimonial-scroll 40s linear infinite;
+}
+
+.testimonial-track-reverse {
+    animation-direction: reverse;
+}
+
+.testimonial-marquee-row:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+@keyframes testimonial-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ============================================================
+   TIMELINE
+============================================================ */
+
+/* Mobile: cards offset from left line */
+@media (max-width: 767px) {
+    .timeline-item {
+        padding-left: 2.75rem;
+    }
+}
+
+/* ============================================================
+   FLOATING ANIMATIONS
+============================================================ */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes float-delay {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float-delay 5s ease-in-out infinite 1s;
+}
+
+/* ============================================================
+   MISC ANIMATIONS
+============================================================ */
+
+@keyframes ping-slow {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.animate-ping-slow {
+    animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Navbar scrolled state */
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-primary-100);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.04);
+}
+.dark #navbar.scrolled {
+    background-color: rgba(10, 25, 41, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile menu open state */
+#mobile-menu.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+#mobile-menu.open #mobile-menu-panel {
+    transform: translateX(0);
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .skill-bar {
+        transition: none;
+    }
+
+    .animate-float,
+    .animate-float-delay,
+    .animate-ping-slow,
+    .animate-bounce-slow {
+        animation: none;
+    }
+}
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--color-primary-500) 50%, transparent);
+}

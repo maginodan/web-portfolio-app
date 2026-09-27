@@ -1,0 +1,6 @@
+<svg class="h-12 w-auto hidden dark:block" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="80" height="80" rx="18" fill="#005eff"/>
+                    <path d="M18 58V22l22 22 22-22v36" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <text x="96" y="36" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.3" fill="#ffffff">Magino</text>
+                    <text x="96" y="66" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.3" fill="#4d94ff">Daniel</text>
+                </svg>
