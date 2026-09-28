@@ -401,9 +401,9 @@ Additional knowledge can be added through the administration dashboard.
 
 ---
 
-# 🗄️ Database
+## 🗄️ Database
 
-The project includes migrations for the application's main data structures.
+The project uses Laravel migrations and seeders to create and populate the application database.
 
 The database contains tables for:
 
@@ -427,13 +427,29 @@ The database contains tables for:
 * Chatbot settings
 * Laravel framework tables
 
-The repository uses Laravel migrations rather than requiring a database dump.
+### Database Setup
 
-This makes it possible for another developer to create a fresh database using:
+For a fresh installation, create an empty MySQL/MariaDB database and run:
 
 ```bash
 php artisan migrate:fresh --seed
 ```
+
+This creates the required database structure and populates it with demo content.
+
+### Demo Database
+
+A sanitized demo database dump is also available at:
+
+```text
+database/demo/web_portfolio_test.sql
+```
+
+You can import this SQL file directly into MySQL/MariaDB or through phpMyAdmin if you prefer using a database dump instead of running the migrations and seeders.
+
+> **Important:** The demo database contains sample/portfolio data only. It does not contain real passwords, API keys, database credentials, or other private credentials.
+
+The repository does **not** include the production database.
 
 ---
 
