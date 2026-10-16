@@ -174,7 +174,6 @@
                             </script>
 
                             <!-- hCaptcha -->
-                            <!-- hCaptcha -->
                             @if($siteSetting?->hcaptcha_enabled && $siteSetting?->hcaptcha_site_key)
                                 <div class="form-group" style="transform: scale(0.92); transform-origin: left top; margin-bottom: 0;">
                                     <div class="h-captcha" data-sitekey="{{ $siteSetting->hcaptcha_site_key }}"></div>
@@ -210,13 +209,29 @@
                             </button>
                         </form>
 
+                        
                         <div class="text-center" style="margin-top: 20px;">
                             <hr style="margin: 15px 0;" />
 
-                            <p class="text-muted" style="margin-bottom: 5px;">Portfolio Administration</p>
+                            <p class="text-muted" style="margin-bottom: 8px;">
+                                Portfolio Administration
+                            </p>
 
-                            <small class="text-muted"> {{ $siteSetting->footer_text ?? 'Copyright © 2026 Magino Kent Daniel. All rights reserved.' }} </small>
+                            <!-- Go to Portfolio Link: Visible on Mobile and Desktop -->
+                            <a href="{{ route('pages.index') }}"
+                            class="btn btn-default btn-sm"
+                            style="margin-bottom: 12px;">
+                                <i class="fa fa-arrow-left"></i>
+                                Go to Portfolio
+                            </a>
+
+                            <br />
+
+                            <small class="text-muted">
+                                {{ $siteSetting->footer_text ?? 'Copyright © 2026 Magino Kent Daniel. All rights reserved.' }}
+                            </small>
                         </div>
+
                     </div>
                 </div>
             </div>
