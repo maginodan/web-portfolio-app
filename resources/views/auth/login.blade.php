@@ -213,16 +213,12 @@
                         <div class="text-center" style="margin-top: 20px;">
                             <hr style="margin: 15px 0;" />
 
-                            <p class="text-muted" style="margin-bottom: 8px;">
-                                Portfolio Administration
-                            </p>
+                            
+                            <p class="text-muted" style="margin-bottom: 5px;">Portfolio Administration</p>
 
-                            <!-- Go to Portfolio Link: Visible on Mobile and Desktop -->
                             <a href="{{ route('pages.index') }}"
-                            class="btn btn-default btn-sm"
-                            style="margin-bottom: 12px;">
-                                <i class="fa fa-arrow-left"></i>
-                                Go to Portfolio
+                            style="font-size: 12px; display: inline-block; margin-bottom: 8px;">
+                                <i class="fa fa-arrow-left"></i> Go to Portfolio
                             </a>
 
                             <br />
@@ -230,6 +226,7 @@
                             <small class="text-muted">
                                 {{ $siteSetting->footer_text ?? 'Copyright © 2026 Magino Kent Daniel. All rights reserved.' }}
                             </small>
+
                         </div>
 
                     </div>
